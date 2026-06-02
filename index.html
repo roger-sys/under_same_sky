@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under The Same Sky ✨</title>
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icons FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link to premium stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. CUSTOM ELEGANT CURSOR TRAIL (Desktop Only) -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+    <!-- 2. LANDING SCREEN -->
+    <div class="fullscreen-scene" id="landing-screen">
+        <h1 class="landing-title">Hey <span id="partner-name-landing">Shaki</span> ❤️</h1>
+        <p class="landing-subtitle">I made something special for you...</p>
+        <button class="journey-btn clickable" id="begin-btn">Begin Journey</button>
+    </div>
+
+    <!-- 3. MAIN COSMIC CANVAS BACKGROUND (Twinkles, Shooting Stars & Name Formation) -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- 4. DYNAMIC INTERACTIVE INTERFACE (Fades in after name constellation forms) -->
+    <div id="interactive-interface">
+
+        <!-- MINIMALIST GLOBAL MUSIC PLAYER -->
+        <div class="music-widget glass-panel">
+            <button class="music-toggle-btn clickable" id="music-toggle" title="Toggle Music">
+                <i class="fas fa-volume-mute" id="music-icon"></i>
+            </button>
+            <div class="music-equalizer" id="equalizer">
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+            </div>
+        </div>
+
+        <!-- SCENE 1: THE MOON & CONSTELLATION TITLE -->
+        <section class="scene-section" id="moon-section">
+            <div class="moon-container">
+                <div class="moon clickable" id="interactive-moon" title="A Secret Love Letter">
+                    <div class="moon-halo-effect"></div>
+                </div>
+                <span class="moon-hint">Click the Moon</span>
+            </div>
+
+            <!-- Space Reserved for Canvas Constellation Formation -->
+            <div class="constellation-wrapper"></div>
+
+            <!-- Romantic Cursive Message -->
+            <div class="romantic-quote-container" id="quote-container">
+                <p class="romantic-quote">No matter where we are,<br>we're under the same sky ❤️</p>
+            </div>
+
+            <!-- Storytelling Scroll Indicator -->
+            <div class="scroll-indicator" id="scroll-prompt">
+                <span>Scroll to explore our sky</span>
+                <i class="fas fa-chevron-down scroll-arrow"></i>
+            </div>
+        </section>
+
+        <!-- SCENE 2: RELATIONSHIP TIME COUNTER -->
+        <section class="scene-section counter-section scroll-reveal" id="counter-section">
+            <div class="narrative-prompt">"Time is a luxury, but every second with you is a treasure..." ⏳</div>
+            <h2 class="counter-title">Our Time Together</h2>
+            <div class="counter-grid glass-panel">
+                <div class="counter-item">
+                    <span class="counter-number" id="count-days">000</span>
+                    <span class="counter-label">Days</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="count-hours">00</span>
+                    <span class="counter-label">Hours</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="count-minutes">00</span>
+                    <span class="counter-label">Minutes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 3: MEMORY PHOTO GALLERY -->
+        <section class="scene-section gallery-section scroll-reveal" id="gallery-section">
+            <div class="narrative-prompt">"Love is the one thing that transcends dimensions of time and space..." 🌌
+            </div>
+            <h2 class="gallery-title">Moments We Cherish</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev-arrow clickable" id="carousel-prev" title="Previous Moment">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="gallery-container carousel-3d" id="gallery-container">
+                    <!-- Polaroid Cards will be populated dynamically from script.js CONFIG -->
+                </div>
+                <button class="carousel-arrow next-arrow clickable" id="carousel-next" title="Next Moment">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </section>
+
+        <!-- SCENE 3.5: MAKE A WISH INTERACTIVE SECTION -->
+        <section class="scene-section wish-section scroll-reveal" id="wish-section">
+            <div class="narrative-prompt">Whisper your dream to the cosmos...</div>
+            <div class="wish-panel glass-panel">
+                <h2 class="wish-title">Make a Wish ✨</h2>
+                <p class="wish-subtitle">Type a secret wish for us, and release it into the stars...</p>
+                <div class="wish-input-wrapper">
+                    <input type="text" id="wish-input" class="wish-input clickable" placeholder="I wish for..."
+                        maxlength="100">
+                    <button id="wish-btn" class="wish-btn clickable">Send to Stars</button>
+                </div>
+                <div class="wish-status" id="wish-status"></div>
+            </div>
+        </section>
+
+        <!-- SCENE 4: FINAL INTERACTIVE SCENE WITH FLOATING HEARTS -->
+        <section class="scene-section final-section scroll-reveal" id="final-scene">
+            <div class="narrative-prompt">"Perhaps we've forgotten that our destiny lies in the stars..." ✨</div>
+            <div class="hearts-container" id="hearts-container"></div>
+            <h2 class="final-message">You are my favorite notification</h2>
+            <div class="final-heart-wrapper">
+                <i class="fas fa-heart final-heart-icon"></i>
+            </div>
+
+            <!-- 🎁 12. FINAL SURPRISE GIFT BOX -->
+            <div class="gift-box-section">
+                <p class="gift-hint">A final surprise is waiting for you... 🎁</p>
+                <div class="gift-container clickable" id="interactive-gift">
+                    <div class="gift-box-lid"></div>
+                    <div class="gift-box-body">
+                        <div class="gift-box-ribbon-v"></div>
+                        <div class="gift-box-ribbon-h"></div>
+                        <div class="gift-box-bow"></div>
+                    </div>
+                    <div class="gift-glow-effect"></div>
+                </div>
+                
+                <div class="gift-card-reveal" id="gift-card-reveal">
+                    <div class="gift-card-content glass-panel">
+                        <h3 class="gift-card-title">My Universe ✨</h3>
+                        <p class="gift-card-message">Thank you for being part of my universe ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 5. HIDDEN SECRET LOVE LETTER OVERLAY (3D Envelope & Tactile Wax Seal) -->
+    <div id="letter-overlay">
+        <div class="envelope-wrapper">
+            <div class="envelope" id="interactive-envelope">
+                <!-- Back face / inside layer of envelope -->
+                <div class="envelope-back"></div>
+
+                <!-- The romantic letter sheet tucked inside -->
+                <div class="letter-sheet glass-panel" id="letter-sheet">
+                    <button class="letter-close-btn clickable" id="letter-close" title="Close Letter">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="letter-content">
+                        <h3 class="letter-greeting" id="letter-greeting">My Dearest Aria,</h3>
+                        <p class="letter-body" id="letter-body">...</p>
+                        <p class="letter-closing" id="letter-closing">With love, always ❤️</p>
+                    </div>
+                </div>
+
+                <!-- Folded flaps -->
+                <div class="envelope-flap left-flap"></div>
+                <div class="envelope-flap right-flap"></div>
+                <div class="envelope-flap bottom-flap"></div>
+                <div class="envelope-flap top-flap" id="top-flap"></div>
+
+                <!-- Tactile Wax Seal stamped on top -->
+                <div class="wax-seal clickable" id="wax-seal" title="Break Seal">
+                    <div class="wax-heart"><i class="fas fa-heart"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. DYNAMIC PREMIUM LIGHTBOX FOR PHOTOS -->
+    <div id="lightbox-overlay">
+        <button class="lightbox-close-btn clickable" id="lightbox-close" title="Close Image">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption">Photo Caption</div>
+        </div>
+    </div>
+
+    <!-- Script linking -->
+    <script src="script.js"></script>
+</body>
+
+</html>
